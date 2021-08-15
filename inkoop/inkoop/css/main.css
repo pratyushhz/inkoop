@@ -1,0 +1,312 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .hide {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+body {
+
+  font-family: 'Poppins';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.mob-header {
+  display: none;
+}
+
+.mob-header .fa-shopping-cart {
+  color: crimson !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .mob-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.mob-header .menu_container {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mob-header .menu_container .menu {
+  position: relative;
+  width: 2.3em;
+  height: 3px;
+  background-color: crimson;
+}
+
+.mob-header .menu_container .menu::before {
+  content: "";
+  top: -.7em;
+  width: 1.9em;
+  height: 3px;
+  background-color: crimson;
+  position: absolute;
+}
+
+.mob-header .menu_container .menu::after {
+  content: "";
+  top: .8em;
+  width: 2em;
+  height: 3px;
+  background-color: crimson;
+  position: absolute;
+}
+
+.header {
+  padding: 2.5em;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header .title {
+    display: none;
+  }
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header ul li {
+  cursor: pointer;
+  margin-top: 3em;
+  position: relative;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.header ul li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: crimson;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.header ul li:hover::before {
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-color: crimson;
+}
+
+.header button {
+  cursor: pointer;
+  -webkit-box-shadow: 0 1em 1em rgba(0, 0, 0, 0.123);
+          box-shadow: 0 1em 1em rgba(0, 0, 0, 0.123);
+  margin-top: 3em;
+  padding: .7em 3em;
+  border-radius: 2em;
+  border: none;
+  outline: none;
+  background-color: crimson;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .header button {
+    display: none;
+  }
+}
+
+.header button:hover {
+  -webkit-box-shadow: 0 1em 1.3em rgba(0, 0, 0, 0.233);
+          box-shadow: 0 1em 1.3em rgba(0, 0, 0, 0.233);
+}
+
+.body {
+  padding: 2.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 2fr;
+      grid-template-columns: 5fr 2fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding: 1em;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+  }
+}
+
+.body h1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/2/2;
+  font-size: 4.5rem;
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .body h1 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1/1/2/2;
+    margin-right: 0;
+    font-size: 3.5rem;
+  }
+}
+
+.body p {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-area: 1/2/2/-1;
+  color: rgba(0, 0, 0, 0.596);
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .body p {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-area: 3/1/4/-1;
+    font-size: 1rem;
+  }
+}
+
+.body p::after {
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: crimson;
+}
+
+.body .cards {
+  grid-area: 2/1/-1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+.body .cards::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .body .cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (2fr)[2];
+        grid-template-columns: repeat(2, 2fr);
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-area: 2/1/3/-1;
+  }
+}
+
+.body .cards .card {
+  cursor: pointer;
+  height: 80%;
+  gap: .8em;
+  padding: 2em;
+  -webkit-box-shadow: 0 1em 1em rgba(0, 0, 0, 0.123), 0 0 1em rgba(0, 0, 0, 0.205);
+          box-shadow: 0 1em 1em rgba(0, 0, 0, 0.123), 0 0 1em rgba(0, 0, 0, 0.205);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1em;
+}
+
+.body .cards .card h2 {
+  font-size: 1rem;
+}
+
+.body .cards .card img {
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+}
+/*# sourceMappingURL=main.css.map */
